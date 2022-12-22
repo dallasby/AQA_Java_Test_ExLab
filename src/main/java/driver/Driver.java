@@ -3,10 +3,10 @@ package driver;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+
 import java.time.Duration;
 
-public class driver {
-
+public final class Driver {
     private static WebDriver driver;
 
     public static void createDriver() {
@@ -23,5 +23,4 @@ public class driver {
         driver.close();
         driver.quit();
     }
-
 }

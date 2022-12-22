@@ -5,12 +5,10 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import static driver.driver.getDriver;
+import static driver.Driver.getDriver;
 
 public class BasePage {
-
     protected WebDriver driver;
-
     protected String baseUrl = "http://test.exlab.team/";
 
     public BasePage() {
@@ -18,16 +16,17 @@ public class BasePage {
         PageFactory.initElements(driver, this);
     }
 
-    //Локаторы, относящиеся ко всем страницам сайта. В случае лендинга - к хедеру и футеру
-
     @FindBy(id = "logo_mobile")
-    public WebElement logo;
-
-    //Методы для данной страницы, которые используются тестами в классе BasePageTest
+    private WebElement logo;
 
     public BasePage open() {
         driver.get(baseUrl);
+        driver.manage().window().maximize();
         return this;
+    }
+
+    public WebElement getLogo() {
+        return logo;
     }
 }
 
