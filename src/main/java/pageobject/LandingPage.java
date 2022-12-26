@@ -16,6 +16,14 @@ public class LandingPage extends BasePage {
     @FindBy(xpath = "//a[contains(text(),'Проекты')]")
     private WebElement projectItem;
 
+    @FindBy(xpath = "//a[contains(text(),'Менторы')]")
+    private WebElement mentorsItem;
+
+    @FindBy(xpath = "//a[contains(text(),'StartUp для')]")
+    private WebElement startUpItem;
+
+    @FindBy(xpath = "//div[@class='sc-fnykZs lfkjFc']")
+    private WebElement crescentIcon;
 
 
     public WebElement getBigLogo() {
@@ -32,5 +40,25 @@ public class LandingPage extends BasePage {
 
     public WebElement getProjectItem() {
         return projectItem;
+    }
+
+    public WebElement getMentorsItem() {
+        return mentorsItem;
+    }
+
+    public WebElement getStartUpItem() {
+        return startUpItem;
+    }
+
+    public WebElement getCrescentIcon() {
+        return crescentIcon;
+    }
+
+    public void clickOnSunIcon() {
+        sunIcon.click();
+    }
+
+    public void clickOnCrescentIcon() {
+        crescentIcon.click();
     }
 }
